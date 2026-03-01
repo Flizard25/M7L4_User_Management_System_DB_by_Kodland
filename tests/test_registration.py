@@ -36,6 +36,15 @@ def test_add_new_user(setup_database, connection):
     user = cursor.fetchone()
     assert user, "Пользователь должен быть добавлен в базу данных."
 
+def test_show_list_users(setup_database, connection):
+    """Тест отображения пользователей."""
+    add_user('testuser', 'testuser@example.com', 'password123')
+    cursor = connection.cursor()
+    cursor.execute("SELECT * FROM users")
+    user = cursor.fetchone()
+    
+    assert 'testuser' in user and  'testuser@example.com' in user and 'password123' in user, "всё должны быть отображены"
+
 # Возможные варианты тестов:
 def test_thanks_for_use_our_project():
     print ("Спасибо, что воспользовались нашим проектом")
