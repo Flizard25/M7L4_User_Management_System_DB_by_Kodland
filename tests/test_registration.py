@@ -43,7 +43,7 @@ def test_show_list_users(setup_database, connection):
     cursor.execute("SELECT * FROM users")
     user = cursor.fetchone()
     
-    assert 'testuser' in user and  'testuser@example.com' in user , "юзеры должны быть отображены"
+    assert 'testuser' in user and  'testuser@example.com' in user and 'password123' in user, "всё должны быть отображены"
 
 # Возможные варианты тестов:
 """
