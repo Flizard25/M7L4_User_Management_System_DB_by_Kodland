@@ -42,4 +42,8 @@ pip install pytest
 ```bash
 pytest
 ```
-## Автор
+## Авторы
+Kodland
+Flizard25
+Afarfoxe
+Ksenia70514
